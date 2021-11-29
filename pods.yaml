@@ -4,7 +4,7 @@ metadata:
   name: redis
 spec:
   containers:
-  - name: bear
+  - name: bear1
     image: supergiantkir/animals:bear
     volumeMounts:
     - name: app-storage
