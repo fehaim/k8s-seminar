@@ -1,10 +1,26 @@
-
 ---
+kind: Service      # Create new service
+apiVersion: v1     
+metadata:
+  name: animals-service # Name of the service (DNS - RFC 2929)
+spec:
+  selector:
+    app: animals
+    # Run on any pod with label - app:myapp
+  ports:          # Map incoming port to target port
+  - name: animals-port    # Setting multiple ports listen 
+    protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+---
+
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: animals-hare
 spec:
+  serviceName: "animals-service"
   selector:
     matchLabels:
       app: animals
