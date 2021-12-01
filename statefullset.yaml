@@ -5,7 +5,7 @@ metadata:
   name: animals-service # Name of the service (DNS - RFC 2929)
 spec:
   selector:
-    app: animals
+    statefulset.kubernetes.io/pod-name: animals-hare-0
     # Run on any pod with label - app:myapp
   ports:          # Map incoming port to target port
   - name: animals-port    # Setting multiple ports listen 
