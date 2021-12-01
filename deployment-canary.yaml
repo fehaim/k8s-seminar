@@ -16,7 +16,7 @@ spec:
       - name: animals
         image: supergiantkir/animals:hare
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 
 ---
 apiVersion: apps/v1
@@ -37,7 +37,7 @@ spec:
       - name: animals
         image: supergiantkir/animals:bear
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 
 ---
 kind: Service      # Create new service
@@ -52,6 +52,6 @@ spec:
   - name: animals-port    # Setting multiple ports listen 
     protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80
   type: LoadBalancer
   
