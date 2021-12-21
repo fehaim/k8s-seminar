@@ -15,9 +15,9 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+  - host: 52.48.122.142.nip.io
   - http:
       paths:
-      - host: 52.48.122.142.nip.io
       - path: /bear(/|$)(.*)
         pathType: Prefix
         backend:
